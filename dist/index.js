@@ -16,11 +16,11 @@ const axios_1 = __importDefault(require("axios"));
 function fetchUsers() {
     return __awaiter(this, void 0, void 0, function* () {
         const res = yield axios_1.default.get('https://jsonplaceholder.typicode.com/users');
-        // console.log(res.data);
+        console.log(res.data);
         const data = res.data;
-        for (let i = 0; i < 3; i++) {
-            console.log(data[i].name);
-        }
+        data.slice(0, 3).forEach((i) => {
+            console.log(i.name);
+        });
     });
 }
 fetchUsers();
