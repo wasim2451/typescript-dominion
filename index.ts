@@ -54,3 +54,31 @@ function displayName(name:string,greet?:string){
 }
 displayName("Saru");
 displayName("Rifa","hello");
+ 
+//Default Parameters
+function sayName(name2:string,name:string="Rifa"){
+    console.log(`Parameter name ${name2} and Default Name is ${name}`);
+};
+sayName("Sritama");
+
+//Return type
+
+function noreturn():void{
+    console.log('Void function running !');
+}
+noreturn();
+
+//Never return 
+// Function that return nevers always used for throwing an error
+
+// function neverReturn():never{
+//     throw new Error("I love Her !");
+// }
+// neverReturn();
+
+//Async function
+async function fetchData():Promise<void>{
+    const res=await axios.get("https://jsonplaceholder.typicode.com/posts");
+    console.log(res.data);
+}
+fetchData();
