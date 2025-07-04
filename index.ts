@@ -34,51 +34,91 @@ import axios from "axios";
 
 //Module 3 -> Functions in Typescript
 //Basic Function
-function add(a :number,b:number):number{
-     return a+b;
-}
-console.log('Basic Functions : ',add(5,3));
+// function add(a :number,b:number):number{
+//      return a+b;
+// }
+// console.log('Basic Functions : ',add(5,3));
 
-// Arrow functions
-const add2=(a :number,b:number):number=>{
-    return a+b;
-}
-console.log('Arrow functions :',add2(10,20));
+// // Arrow functions
+// const add2=(a :number,b:number):number=>{
+//     return a+b;
+// }
+// console.log('Arrow functions :',add2(10,20));
 
-//Optional Parameters
-function displayName(name:string,greet?:string){
-    console.log(name);
-    if(greet){
-        console.log(greet);
-    }
-}
-displayName("Saru");
-displayName("Rifa","hello");
+// //Optional Parameters
+// function displayName(name:string,greet?:string){
+//     console.log(name);
+//     if(greet){
+//         console.log(greet);
+//     }
+// }
+// displayName("Saru");
+// displayName("Rifa","hello");
  
-//Default Parameters
-function sayName(name2:string,name:string="Rifa"){
-    console.log(`Parameter name ${name2} and Default Name is ${name}`);
-};
-sayName("Sritama");
+// //Default Parameters
+// function sayName(name2:string,name:string="Rifa"){
+//     console.log(`Parameter name ${name2} and Default Name is ${name}`);
+// };
+// sayName("Sritama");
 
-//Return type
+// //Return type
 
-function noreturn():void{
-    console.log('Void function running !');
-}
-noreturn();
+// function noreturn():void{
+//     console.log('Void function running !');
+// }
+// noreturn();
 
-//Never return 
-// Function that return nevers always used for throwing an error
+// //Never return 
+// // Function that return nevers always used for throwing an error
 
 // function neverReturn():never{
 //     throw new Error("I love Her !");
 // }
 // neverReturn();
 
-//Async function
-async function fetchData():Promise<void>{
-    const res=await axios.get("https://jsonplaceholder.typicode.com/posts");
-    console.log(res.data);
+// //Async function
+// async function fetchData():Promise<void>{
+//     const res=await axios.get("https://jsonplaceholder.typicode.com/posts");
+//     console.log(res.data);
+// }
+// fetchData();
+
+//Module ->4
+
+//Object Types using type
+type User={
+    id:number,
+    name:string,
+    email:string
 }
-fetchData();
+type userName=User &{
+    age:number
+}
+const obj1:userName={
+    id:1,
+    name:"Wasim",
+    email:"abc@example.com",
+    age:55
+}
+
+//Typescript check every field with User Type . 
+console.log(obj1);
+
+//Object types using Interface
+
+interface User2 {
+    id:number,
+    name:string,
+    email:string
+}
+
+interface user22 extends User2{
+    attack : number 
+}
+const obj2:user22={
+    id:24,
+    name:"Sritama",
+    email:"abc@gmail.com",
+    attack :100
+}
+console.log(obj2);
