@@ -122,3 +122,71 @@ const obj2:user22={
     attack :100
 }
 console.log(obj2);
+
+//interface of same names can be merged !
+interface obj11{
+    name:string,
+    class:number
+}
+interface obj11{
+    rollno :number
+}
+
+const obj :obj11={
+    name:"Sritama",
+    class:10,
+    rollno:10
+}
+console.log(obj);
+//Optional Properties
+// interface Post {
+//   id: number;
+//   title: string;
+//   body?: string; // may or may not exist
+// }
+
+//Readonly Properties
+
+// interface Post {
+//   readonly id: number;
+//   title: string;
+// }
+// const x:Post={
+//     id:2,
+//     title:"Hello"
+// }
+// x.id=3; // Error
+
+//Nested Object types
+
+interface author{
+    name:string,
+    title:string
+}
+interface book{
+    name:string,
+    pub_year:number,
+    author:author
+}
+
+const newBook:book={
+    name:"ABC",
+    pub_year:2016,
+    author:{
+        name:"Adolf Hitler",
+        title:"ABC"
+    }
+}
+
+console.log(newBook);
+//Array of Custom Objects !
+
+interface Users{
+    name:string,
+    title:string
+}
+const set:Users[]=[
+    {name:"Wasim",title:"Khan"},
+    {name:"Sritama","title":"Kumar"}
+]
+console.log(set);

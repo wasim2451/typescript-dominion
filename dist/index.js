@@ -15,3 +15,23 @@ const obj2 = {
     attack: 100
 };
 console.log(obj2);
+const obj = {
+    name: "Sritama",
+    class: 10,
+    rollno: 10
+};
+console.log(obj);
+const newBook = {
+    name: "ABC",
+    pub_year: 2016,
+    author: {
+        name: "Adolf Hitler",
+        title: "ABC"
+    }
+};
+console.log(newBook);
+const set = [
+    { name: "Wasim", title: "Khan" },
+    { name: "Sritama", "title": "Kumar" }
+];
+console.log(set);
